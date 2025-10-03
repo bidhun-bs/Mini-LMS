@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Courses</h2>
+
+    <div *ngIf="loading" class="spinner"></div>
+    <p *ngIf="!loading && errorMsg" class="error">{{ errorMsg }}</p>
+
+    <div *ngIf="!loading && !errorMsg">
+        <table class="courses" *ngIf="courses.length; else noData">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Instructor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of courses">
+                    <td>{{ c.title }}</td>
+                    <td>{{ c.description || '-' }}</td>
+                    <td>{{ c.instructor || '-' }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-template #noData>
+            <p>No courses found.</p>
+        </ng-template>
+    </div>
+</div>

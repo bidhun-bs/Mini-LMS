@@ -1,0 +1,31 @@
+<div class="auth-card">
+    <h2>Register</h2>
+    <div class="grid">
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <label>First Name <input type="text" formControlName="first_name" /></label>
+            <div *ngIf="form.controls.first_name.touched && form.controls.first_name.invalid">Required</div>
+
+            <label>Last Name <input type="text" formControlName="last_name" /></label>
+            <div *ngIf="form.controls.last_name.touched && form.controls.last_name.invalid">Required</div>
+
+            <label>Email <input type="email" formControlName="email" /></label>
+            <div *ngIf="form.controls.email.touched && form.controls.email.invalid">Valid email required</div>
+
+            <label>Phone <input type="text" formControlName="phone_number" /></label>
+            <div *ngIf="form.controls.phone_number.touched && form.controls.phone_number.invalid">Numeric only</div>
+
+            <label>Password <input type="password" formControlName="password" /></label>
+            <div *ngIf="form.controls.password.touched && form.controls.password.invalid">Min 6 characters</div>
+
+            <label>Country Code <input type="text" formControlName="country_code" /></label>
+
+            <button type="submit" [disabled]="loading || form.invalid">
+                <span *ngIf="!loading">Register</span>
+                <span *ngIf="loading" class="spinner"></span>
+            </button>
+        </form>
+
+        <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+        <a routerLink="/login">Back to login</a>
+    </div>
