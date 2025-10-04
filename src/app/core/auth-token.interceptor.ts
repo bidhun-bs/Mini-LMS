@@ -10,14 +10,19 @@ export class AuthTokenInterceptor implements HttpInterceptor {
   constructor(private auth: AuthService, private router: Router) {}
 
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const token = this.auth.getToken();
-    const authReq = token ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } }) : req;
+
+      const isAuthEndpoint = req.url.includes('/users/login/') || req.url.includes('/users/sign-up/');
+
+      const token = this.auth.getToken();
+      const authReq = !isAuthEndpoint && token ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } }): req;
 
     return next.handle(authReq).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status === 401) this.router.navigate(['/login']);
-        return throwError(() => error);
-      })
-    );
+      if (!isAuthEndpoint && error.status === 401) {
+      this.router.navigate(['/login']);
+    }
+    return throwError(() => error);
+  })
+  );
   }
 }

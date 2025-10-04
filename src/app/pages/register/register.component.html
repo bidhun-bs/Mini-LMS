@@ -1,4 +1,4 @@
-<div class="auth-card">
+<!-- <div class="auth-card">
     <h2>Register</h2>
     <div class="grid">
 
@@ -28,4 +28,64 @@
 
         <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
         <a routerLink="/login">Back to login</a>
+    </div> -->
+
+<div class="auth">
+    <div class="auth-card">
+        <h2 class="title">Create Account</h2>
+        <p class="subtitle">Join and start learning today</p>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" class="form-grid">
+            <label>First Name
+                <input type="text" formControlName="first_name" />
+            </label>
+            <div *ngIf="form.controls.first_name.touched && form.controls.first_name.invalid" class="error">
+                First name is required
+            </div>
+
+            <label>Last Name
+                <input type="text" formControlName="last_name" />
+            </label>
+            <div *ngIf="form.controls.last_name.touched && form.controls.last_name.invalid" class="error">
+                Last name is required
+            </div>
+
+            <label>Email
+                <input type="email" formControlName="email" />
+            </label>
+            <div *ngIf="form.controls.email.touched && form.controls.email.invalid" class="error">
+                Valid email is required
+            </div>
+
+            <label>Phone
+                <input type="text" formControlName="phone_number" />
+            </label>
+            <div *ngIf="form.controls.phone_number.touched && form.controls.phone_number.invalid" class="error">
+                Enter a valid number
+            </div>
+
+            <label>Password
+                <input type="password" formControlName="password" />
+            </label>
+            <div *ngIf="form.controls.password.touched && form.controls.password.invalid" class="error">
+                Minimum 6 characters
+            </div>
+
+            <label>Country Code
+                <input type="text" formControlName="country_code" />
+            </label>
+
+            <button type="submit" [disabled]="loading || form.invalid">
+                <span *ngIf="!loading">Register</span>
+                <span *ngIf="loading" class="spinner"></span>
+            </button>
+        </form>
+
+        <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+        <p *ngIf="successMsg" class="success">{{ successMsg }}</p>
+
+        <div class="meta">
+            <p>Already have an account? <a routerLink="/login" class="link">Login here</a></p>
+        </div>
     </div>
+</div>

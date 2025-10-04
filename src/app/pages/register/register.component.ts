@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   loading = false;
   errorMsg = '';
+  successMsg = '';
 
   form = this.fb.group({
     first_name: ['', Validators.required],
@@ -32,7 +33,11 @@ export class RegisterComponent {
     this.auth.register(this.form.value as any).subscribe({
       next: () => {
         this.loading = false;
+        this.successMsg = '✅ Registration successful! Redirecting to login...';
+        
+        setTimeout(() => {
         this.router.navigate(['/login']);
+      }, 2000);
       },
       error: () => {
         this.loading = false;

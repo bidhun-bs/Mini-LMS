@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environment/environment';
+import { environment } from 'src/environments/environment';
 import { Observable, tap } from 'rxjs';
 
 
@@ -25,8 +25,12 @@ export class AuthService {
   }
 
   register(payload: {
-    first_name: string; last_name: string; email: string;
-    phone_number: string; password: string; country_code: string;
+    first_name: string; 
+    last_name: string; 
+    email: string;
+    phone_number: string; 
+    password: string; 
+    country_code: string;
   }) {
     return this.http.post(`${this.base}/users/sign-up/`, payload);
   }

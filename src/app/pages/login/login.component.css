@@ -1,37 +1,130 @@
+
+/* Auth container */
 .auth {
-  min-height: calc(100dvh - 56px);
-  display: grid;
-  place-items: center;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 24px;
+  background: #f3f4f6; /* light gray background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Card */
 .card {
   width: 100%;
-  max-width: 420px;
-  padding: 28px;
+  max-width: 380px;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+/* Title & Subtitle */
 .title {
   margin: 0 0 8px;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 750;
+  color: #111827;
 }
+
 .subtitle {
-  margin: 0 0 16px;
-  color: var(--muted);
+  margin: 0 0 20px;
+  color: #424549;
   font-size: 14px;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 16px;
-
-  .grow { flex: 1; }
+/* Form Group */
+.form-group {
+  text-align: left;
+  margin-bottom: 16px;
 }
 
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+.btn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Messages */
+.error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Meta link */
 .meta {
-  margin-top: 12px;
+  margin-top: 18px;
   font-size: 14px;
+}
+
+.link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
