@@ -1,16 +1,14 @@
 
-/* Auth container */
 .auth {
   min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 24px;
-  background: #f3f4f6; /* light gray background */
+  background: #f3f4f6; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Card */
 .card {
   width: 100%;
   max-width: 380px;
@@ -21,7 +19,6 @@
   text-align: center;
 }
 
-/* Title & Subtitle */
 .title {
   margin: 0 0 8px;
   font-size: 28px;
@@ -35,7 +32,6 @@
   font-size: 14px;
 }
 
-/* Form Group */
 .form-group {
   text-align: left;
   margin-bottom: 16px;
@@ -49,7 +45,6 @@ label {
   font-weight: 500;
 }
 
-/* Input Fields */
 input {
   width: 100%;
   padding: 10px 12px;
@@ -65,7 +60,6 @@ input:focus {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-/* Button */
 .btn {
   width: 100%;
   padding: 12px;
@@ -89,7 +83,6 @@ input:focus {
   cursor: not-allowed;
 }
 
-/* Spinner */
 .spinner {
   display: inline-block;
   width: 18px;
@@ -106,14 +99,12 @@ input:focus {
   }
 }
 
-/* Error Messages */
 .error {
   color: #dc2626;
   font-size: 13px;
   margin-top: 4px;
 }
 
-/* Meta link */
 .meta {
   margin-top: 18px;
   font-size: 14px;

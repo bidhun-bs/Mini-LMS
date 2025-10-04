@@ -1,5 +1,4 @@
 
-/* Page background */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #4a90e2, #9013fe);
@@ -10,20 +9,20 @@ body {
   margin: 0;
 }
 
-/* Auth card */
+
 .auth {
-  min-height: 100vh;         /* take full screen height */
-  display: flex;             /* enable flexbox */
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* center vertically */
-  background: #f5f6fa;       /* optional light background */
+  min-height: 100vh;         
+  display: flex;            
+  justify-content: center;   
+  align-items: center;       
+  background: #f5f6fa;      
   padding: 1rem;
 }
 
 .auth-card {
   background: #fff;
   max-width: 480px;
-  width: 100%;               /* make it responsive */
+  width: 100%;               
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -39,14 +38,12 @@ body {
   font-weight: 600;
 }
 
-/* Grid form layout */
 .grid {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
-/* Labels and inputs */
 label {
   display: flex;
   flex-direction: column;
@@ -70,14 +67,12 @@ input:focus {
   outline: none;
 }
 
-/* Error messages */
 .error {
   color: #e74c3c;
   font-size: 0.85rem;
   margin-top: 0.3rem;
 }
 
-/* Button */
 button {
   width: 100%;
   padding: 0.9rem;
@@ -101,7 +96,7 @@ button:hover:not(:disabled) {
   background: linear-gradient(135deg, #3b7bc4, #7c0fd1);
 }
 
-/* Spinner (loading) */
+
 .spinner {
   border: 3px solid rgba(255,255,255,0.3);
   border-top: 3px solid #fff;
@@ -112,7 +107,7 @@ button:hover:not(:disabled) {
   animation: spin 1s linear infinite;
 }
 
-/* Back link */
+
 a {
   display: block;
   margin-top: 1rem;
@@ -132,7 +127,7 @@ a:hover {
   font-weight: bold;
 }
 
-/* Animations */
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
