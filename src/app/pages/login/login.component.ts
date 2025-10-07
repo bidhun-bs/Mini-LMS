@@ -29,10 +29,10 @@ export class LoginComponent {
         this.loading = false;
         this.router.navigate(['/courses']);
       },
-      error: () => {
-        this.loading = false;
-        this.errorMsg = 'Invalid login';
-      }
+        error: (err) => {
+     this.loading = false;
+     this.errorMsg = err?.error?.message || 'Invalid login';
+    }
     });
   }
 }

@@ -5,24 +5,26 @@
     <p *ngIf="!loading && errorMsg" class="error">{{ errorMsg }}</p>
 
     <div *ngIf="!loading && !errorMsg">
-        <table class="courses" *ngIf="courses.length; else noData">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Instructor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let c of courses">
-                    <td>{{ c.title }}</td>
-                    <td>{{ c.description || '-' }}</td>
-                    <td>{{ c.instructor || '-' }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="courses-wrapper">
+            <table class="courses" *ngIf="courses.length; else noData">
+                <thead>
+                    <tr>
+                        <th>title</th>
+                        <th>Description</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of courses">
+                        <td>{{ c.title }}</td>
+                        <td>{{ c.description || '-' }}</td>
+                        <td>{{ c.instructor || '-' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <ng-template #noData>
-            <p>No courses found.</p>
+            <p>No courses found</p>
         </ng-template>
     </div>
 </div>

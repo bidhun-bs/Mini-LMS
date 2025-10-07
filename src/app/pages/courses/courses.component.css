@@ -1,64 +1,99 @@
-.header {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 16px;
-
-  .title {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 0;
-  }
-  .hint { color: var(--muted); font-size: 14px; }
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #333;
 }
 
-.table-wrap {
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+h2 {
+  text-align: center;
+  color: #1f4e79;
+  margin-bottom: 25px;
+  font-size: 28px;
+  letter-spacing: 0.5px;
 }
 
-.table {
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1f4e79;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  text-align: center;
+  color: #d9534f;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.courses-wrapper {
+  overflow-x: auto; 
+}
+
+.courses {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+  table-layout: fixed; 
+  word-wrap: break-word; 
 }
-.table thead th {
+
+.courses th, .courses td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 15px;
   text-align: left;
+  vertical-align: top; 
+}
+
+.courses th {
+  background-color: #1f4e79;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
   font-weight: 600;
-  background: #f7f9fc;
-  border-bottom: 1px solid var(--border);
-  color: #374151;
-  padding: 12px;
 }
-.table tbody td {
-  border-bottom: 1px solid var(--border);
-  padding: 12px;
-  vertical-align: top;
-}
-.table tbody tr:hover { background: #fafbff; }
 
-.empty {
+.courses tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.courses tbody tr:hover {
+  background-color: #eaf2fb;
+  transition: 0.3s;
+}
+
+p {
   text-align: center;
-  color: var(--muted);
-  padding: 28px;
+  color: #555;
+  font-size: 15px;
+  margin-top: 25px;
 }
 
-.loader { margin: 24px auto; }
-
-@media (max-width: 720px) {
-  .table thead { display: none; }
-  .table, .table tbody, .table tr, .table td { display: block; width: 100%; }
-  .table tr { border-bottom: 1px solid var(--border); }
-  .table td {
-    padding: 10px 12px;
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 8px;
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
   }
-  .table td::before {
-    content: attr(data-label);
-    color: var(--muted);
-    font-weight: 600;
+
+  .courses th, .courses td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 22px;
   }
 }
